@@ -31,3 +31,8 @@ class TrackOrderView(generic.TemplateView):
 
 class StoreView(generic.TemplateView):
     template_name = 'pages/shop/store.html'
+
+
+class BestDealsListView(generic.ListView):
+    template_name = 'pages/shop/best-deals.html'
+    model = Product
