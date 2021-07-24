@@ -4,6 +4,7 @@
 *.pyc
 __pycache__/
 local_settings.py
+settings.ini
 db.sqlite3
 db.sqlite3-journal
 
