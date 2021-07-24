@@ -1,0 +1,67 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Arshamy Shop</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.ico' %}">
+    
+    <!-- CSS
+	============================================ -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/icon-font.min.css' %}">
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
+    
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    
+    <!-- Modernizer JS -->
+    <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+
+<body>
+
+    {% include "partials/base/_header.html" %}
+
+    {% if view.title == 'index' %}
+        {% include "partials/base/_header_category.html" %}
+    {% endif %}
+    
+    {% include "partials/base/_cart.html" %}
+
+    {% block content %}{% endblock content %}
+
+    {% include "partials/base/_subscribe.html" %}
+    
+    {% include 'partials/base/_footer.html' %}
+
+<!-- JS
+============================================ -->
+
+<!-- jQuery JS -->
+<script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<!-- Plugins JS -->
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+
+<!-- Main JS -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

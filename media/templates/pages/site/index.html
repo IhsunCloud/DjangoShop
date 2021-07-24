@@ -1,0 +1,30 @@
+{% extends 'shared/_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include "partials/index/_slider.html" %}
+{% include "partials/index/_top_banner.html" %}
+{% include "partials/index/_featured_items.html" %}
+
+<!-- Banner Section Start -->
+<div class="banner-section section mb-90">
+    <div class="container">
+        <div class="row">
+            
+            <!-- Banner -->
+            <div class="col-12">
+                <div class="banner"><a href="#"><img src="{% static 'assets/images/banner/banner-3.jpg' %}" alt="Banner"></a></div>
+            </div>
+            
+        </div>
+    </div>
+</div><!-- Banner Section End -->
+
+{% include "partials/index/_best_deals.html" %}
+{% include "partials/index/_new_arrival.html" %}
+{% include "partials/index/_feature-shipping.html" %}
+{% include "partials/index/_popup.html" %}
+
+{% endblock content %}
