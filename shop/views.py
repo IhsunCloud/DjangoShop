@@ -16,17 +16,17 @@ class ProductDetailView(generic.DetailView):
 
 class WishlistView(generic.ListView):
     template_name = 'pages/shop/wishlist.html'
-    # model = Product
+    model = Product
 
 
 class CompareListView(generic.ListView):
     template_name = 'pages/shop/compare.html'
-    # model = Product
+    model = Product
 
 
 class TrackOrderView(generic.TemplateView):
     template_name = 'pages/shop/track-order.html'
-    # model = Product
+    model = Product
 
 
 class StoreView(generic.TemplateView):
