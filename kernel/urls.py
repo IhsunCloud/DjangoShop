@@ -10,8 +10,9 @@ urlpatterns = [
     path('', include('mysite.urls')),
     path('blog/', include('blog.urls')),
     path('cart', include('cart.urls')),
+    path('checkout/', include('payment.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('registration/', include('accounts.urls')),
+    path('registration/', include('accounts.urls')), 
     path('shop/', include('shop.urls')),
 ]
 
