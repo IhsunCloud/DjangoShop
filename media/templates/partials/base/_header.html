@@ -40,8 +40,8 @@
                 <div class="col order-2 order-xs-2 order-lg-12 mt-10 mb-10">
                     <!-- Header Account Links Start -->
                     <div class="header-account-links">
-                        <a href="{% url 'registration:register' %}"><i class="icofont icofont-user-alt-7"></i> <span>my account</span></a>
-                        <a href="{% url 'registration:login' %}"><i class="icofont icofont-login d-none"></i> <span>Login</span></a>
+                        <a href="{% url 'accounts:register' %}"><i class="icofont icofont-user-alt-7"></i> <span>my account</span></a>
+                        <a href="{% url 'accounts:login' %}"><i class="icofont icofont-login d-none"></i> <span>Login</span></a>
                     </div><!-- Header Account Links End -->
                 </div>
 
@@ -75,20 +75,20 @@
                                     <ul class="mega-menu three-column">
                                         <li><a href="#">Column One</a>
                                             <ul>
-                                                <li><a href="about-us.html">About us</a></li>
-                                                <li><a href="best-deals.html">Best Deals</a></li>
+                                                <li><a href="{% url 'site:about-us' %}">About us</a></li>
+                                                <li><a href="{% url 'shop:best-deals' %}">Best Deals</a></li>
                                                 <li><a href="{% url 'cart:cart-detail' %}">Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="{% url 'checkout' %}">Checkout</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Column Two</a>
                                             <ul>
-                                                <li><a href="compare.html">Compare</a></li>
-                                                <li><a href="faq.html">Faq</a></li>
-                                                <li><a href="feature.html">Feature</a></li>
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="register.html">Register</a></li>
-                                                <li><a href="store.html">Store</a></li>
+                                                <li><a href="{% url 'shop:compare' %}">Compare</a></li>
+                                                <li><a href="{% url 'site:faq' %}">Faq</a></li>
+                                                <li><a href="{% url 'site:features' %}">Feature</a></li>
+                                                <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                                                <li><a href="{% url 'accounts:register' %}">Register</a></li>
+                                                <li><a href="{% url 'shop:store' %}">Store</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Column Three</a>
