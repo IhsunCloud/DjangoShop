@@ -3,5 +3,5 @@ from django.shortcuts import render
 from django.views import generic
 
 
-class CheckoutView(generic.View):
+class CheckoutView(generic.TemplateView):
     template_name = 'pages/shop/checkout.html'
