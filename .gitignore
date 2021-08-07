@@ -175,4 +175,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Migrations
+accounts/migrations
+blog/migrations
+cart/migrations
+etc/migrations
+payment/migrations
+shop/migrations
+
 # End of https://www.toptal.com/developers/gitignore/api/django,macos
