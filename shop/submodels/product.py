@@ -1,18 +1,17 @@
 from django.db import models
-
-from django.utils.translation import ugettext_lazy as _
+from django.db.models.fields.related import create_many_to_many_intermediary_model
 from django.utils.text import slugify
+from django.utils.translation import ugettext_lazy as _
 
 from ckeditor_uploader.fields import RichTextUploadingField
 
 from .category import Category
 from .comment import Comment
+from .color import Color
 
 from mptt.models import TreeForeignKey
-from taggit.managers import TaggableManager
 from shop.managers import ProductManager
-
-from painless.upload_to import product_directory_path
+from taggit.managers import TaggableManager
 
 
 class Product(models.Model):
@@ -37,17 +36,23 @@ class Product(models.Model):
 	call_for_get_price = models.BooleanField(_('Call For Get Price'), default=False, null=True, blank=True)
 	discount = models.DecimalField(_('Discount'), max_digits=10, decimal_places=0, null=True, blank=True)
 
-	color = models.CharField(_('Color'), max_length=64)
+	color = models.ForeignKey(
+		Color, related_name="product",
+		verbose_name=_('Color'),
+		on_delete = models.CASCADE,
+		blank=True, null=True
+	)
+
 	status = models.CharField(_('Status'),
 		max_length=1, choices=STATUS_CHOICES , null=True)
-
 	availability = models.CharField(_('Availability'),
 		max_length=1, default='A', choices=AVAILABILITY_STATUS, null=True)
+	featured = models.BooleanField(_('Featured'), default=False, null=True)
 	
 	category = TreeForeignKey(Category,
 		verbose_name=_('Category'), related_name='products', on_delete = models.CASCADE, null=True)
 	
-	comment = models.ForeignKey(Comment,verbose_name=_('Comment'),
+	comment = models.ForeignKey(Comment, verbose_name=_('Comment'),
 		related_name='products', on_delete=models.CASCADE, null=True, blank=True)
 
 	tags = TaggableManager()

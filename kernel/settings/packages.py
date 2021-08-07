@@ -5,6 +5,7 @@ import os
 
 # Third-Party Apps -->
 INSTALLED_APPS.append('ckeditor'),
+INSTALLED_APPS.append('colorfield'),
 INSTALLED_APPS.append('mptt'),
 INSTALLED_APPS.append('sorl.thumbnail'),
 INSTALLED_APPS.append('taggit'),
@@ -14,7 +15,7 @@ INSTALLED_APPS.append('taggit'),
 INSTALLED_APPS.append('accounts.apps.AccountsConfig'),
 INSTALLED_APPS.append('blog.apps.BlogConfig'),
 INSTALLED_APPS.append('cart.apps.CartConfig'),
-INSTALLED_APPS.append('mysite.apps.MysiteConfig'),
+INSTALLED_APPS.append('etc.apps.ETCConfig'),
 INSTALLED_APPS.append('painless'),
 INSTALLED_APPS.append('payment.apps.PaymentConfig'),
 INSTALLED_APPS.append('shop.apps.ShopConfig'),

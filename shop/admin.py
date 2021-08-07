@@ -1,6 +1,7 @@
 from django.contrib import admin
+from django.contrib.admin.options import InlineModelAdmin
 
-from shop.models import Category, Comment, Image, Product
+from shop.models import Category, Color, Comment, Image, Product
 
 
 class ImageInline(admin.TabularInline):
@@ -14,7 +15,7 @@ class ImageInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-	list_display = ('title', 'category', 'status', 'created_at')
+	list_display = ('title', 'category', 'status', 'color', 'created_at')
 	search_fields = ('title', 'description')
 	list_editable = ('status',)
 	prepopulated_fields = {'slug': ('title',)}
@@ -24,7 +25,7 @@ class ProductAdmin(admin.ModelAdmin):
 	inlines = [ImageInline]
 
 	def get_changeform_initial_data(self, request):
-		get_data = super(PostAdmin, self).get_changeform_initial_data(request)
+		get_data = super(ProductAdmin, self).get_changeform_initial_data(request)
 		get_data['author'] = request.user.pk
 		return get_data
 
@@ -39,3 +40,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Comment),
 admin.site.register(Image),
+admin.site.register(Color),

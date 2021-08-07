@@ -25,8 +25,8 @@ class Comment(models.Model):
 	class Meta:
 		""" Meta definition for Comment. """
 		ordering = ['-created_at']
-		verbose_name = _('Comment'),
-		verbose_name_plural = _('Comments'),
+		verbose_name = _('Comment')
+		verbose_name_plural = _('Comments')
 
 	def __str__(self):
 		""" Unicode representation of Comments. """
