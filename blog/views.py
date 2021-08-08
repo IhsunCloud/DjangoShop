@@ -3,11 +3,13 @@ from django.urls import reverse
 from django.views import generic
 from django.views.generic.edit import FormMixin
 
+from django_ajax.mixin import AJAXMixin
+
 from blog.models import Category, Comment, Post
 from blog.forms import CommentForm
 
 
-class PostsView(generic.ListView):
+class PostsView(generic.ListView, AJAXMixin):
 	model = Post
 	template_name = 'pages/blog/posts.html'
 	paginate_by = 4
@@ -18,7 +20,7 @@ class PostsView(generic.ListView):
 		return context
 
 
-class SinglePostView(FormMixin, generic.DetailView):
+class SinglePostView(FormMixin, generic.DetailView, AJAXMixin):
 	model = Post
 	template_name = 'pages/blog/single-post.html'
 

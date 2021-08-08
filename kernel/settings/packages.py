@@ -6,6 +6,7 @@ import os
 # Third-Party Apps -->
 INSTALLED_APPS.append('ckeditor'),
 INSTALLED_APPS.append('colorfield'),
+INSTALLED_APPS.append('django_ajax'),
 INSTALLED_APPS.append('mptt'),
 INSTALLED_APPS.append('sorl.thumbnail'),
 INSTALLED_APPS.append('taggit'),

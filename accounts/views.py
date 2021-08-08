@@ -3,10 +3,12 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 
+from django_ajax.mixin import AJAXMixin
+
 from accounts.forms import SignupForm, LoginForm
 
 
-class Register(generic.CreateView):
+class Register(AJAXMixin, generic.CreateView):
 	form_class = SignupForm
 	template_name = "pages/registration/register.html"
 	success_url = reverse_lazy('site:index')
@@ -25,7 +27,7 @@ class Register(generic.CreateView):
 		return redirect(self.success_url)
 
 
-class Login(LoginView):
+class Login(AJAXMixin, LoginView):
 	template_name = 'pages/registration/login.html'
 	form_class = LoginForm
 	success_url = reverse_lazy('site:index')
