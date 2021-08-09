@@ -1,15 +1,15 @@
 from django.contrib import admin
 
-from .models import *
+from blog.models import Category, Comment, Post
 
 
-class CommentInline(admin.TabularInline):
-	""" Tabular Inline View for Comments. """
+# class CommentInline(admin.TabularInline):
+# 	""" Tabular Inline View for Comments. """
 
-	model = Comment
-	min_num = 3
-	max_num = 20
-	extra = 3
+# 	model = Comment
+# 	min_num = 3
+# 	max_num = 20
+# 	extra = 3
 
 
 @admin.register(Post)
@@ -20,8 +20,17 @@ class PostAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug': ('title',)}
 	date_hierarchy = 'created_at'
 	ordering = ('status', 'created_at')
+	# fieldsets = (
+	# 	('Standard info', {
+	# 		'fields': ('title', 'slug', 'author',)
+	# 		}),
+	# 		('Address info', {
+	# 			'fields': ('category', 'image', 'cropping', 'cropping_free',)
+	# 			}),
+	# 			)
+
 	
-	inlines = [CommentInline]
+	# inlines = [CommentInline]
 
 	def get_changeform_initial_data(self, request):
 		get_data = super(PostAdmin, self).get_changeform_initial_data(request)
