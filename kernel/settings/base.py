@@ -3,6 +3,11 @@ import os
 BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), os.pardir)
 
 INSTALLED_APPS = [
+    # auto complete package
+    'dal',
+    'dal_select2',
+    'grappelli',
+    # auto complete package
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -22,6 +27,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_ajax.middleware.AJAXMiddleware',
 ]
 
 

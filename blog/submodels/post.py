@@ -30,8 +30,9 @@ class Post(models.Model):
 	
 	author = models.ForeignKey(User, related_name='posts', null=True, on_delete=models.CASCADE)
 	category = TreeForeignKey(Category, related_name='posts', on_delete=models.CASCADE, null=True)
-	thumbnail = models.ImageField(_('Thumbnail'), upload_to=post_directory_path)
 	status = models.CharField(_('Status'), max_length=1, choices=STATUS_CHOICES)
+	
+	image = models.ImageField(_('Image'), upload_to=post_directory_path, null=True)
 
 	tags = TaggableManager()
 	

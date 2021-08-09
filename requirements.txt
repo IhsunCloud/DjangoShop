@@ -2,11 +2,15 @@ asgiref==3.3.1
 backports.entry-points-selectable==1.1.0
 distlib==0.3.2
 Django==3.1.7
+django-ajax-datatable==4.2.1
+django-appconf==1.0.4
 django-ckeditor==6.1.0
 django-colorfield==0.4.2
+django-image-cropping==1.5.0
 django-js-asset==1.2.2
 django-mptt==0.12.0
 django-taggit==1.5.1
+djangoajax==3.2
 filelock==3.0.12
 Pillow==8.3.1
 platformdirs==2.0.2

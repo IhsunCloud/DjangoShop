@@ -9,16 +9,16 @@ from blog.models import Category, Comment, Post
 from blog.forms import CommentForm
 
 
-class PostsView(generic.ListView, AJAXMixin):
+class PostsView(AJAXMixin, generic.ListView):
 	model = Post
 	template_name = 'pages/blog/posts.html'
-	paginate_by = 4
+	paginate_by = 1
 
 	def get_context_data(self, **kwargs):
 		context = super(PostsView, self).get_context_data(**kwargs)
 		context['recent_posts'] = Post.objects.all()[:3]
 		return context
-
+		
 
 class SinglePostView(FormMixin, generic.DetailView, AJAXMixin):
 	model = Post
