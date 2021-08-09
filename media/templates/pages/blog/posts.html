@@ -3,6 +3,7 @@
 {% load static %}
 {% load humanize %}
 {% load thumbnail %}
+{% load sorl_thumbnail %}
 
 {% block content %}
     <!-- Page Banner Section Start -->
@@ -49,7 +50,7 @@
                             <div class="col-12 mb-40">
                                 <div class="ee-blog">
 
-                                    {% thumbnail object.thumbnail "770x386" format="JPEG" as im %}
+                                    {% thumbnail object.image "770x386" crop="center" quality=60 format="JPEG" as im %}
                                         <a href="{% url 'weblog:single-post' object.slug %}" class="image"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ object.title }}"></a>
                                     {% endthumbnail %}
 
@@ -63,7 +64,7 @@
                                             <li><a href="#">{{ object.comments.count }}</a></li>
                                         </ul>
                                         
-                                        <p>{{ object.description | truncatewords:"50" }}</p>
+                                        <p>{{ object.description |safe|truncatewords:"50" }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +74,7 @@
                     </div>
 
                     <!-- Pagination -->
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col">
 
                             <ul class="pagination">
@@ -89,7 +90,10 @@
                             </ul>
 
                         </div>
-                    </div>
+                    </div> -->
+                    {% if is_paginated %}
+                        {% include 'partials/_pagination.html' %}
+                    {% endif %}
 
                 </div>
                 

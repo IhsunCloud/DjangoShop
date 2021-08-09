@@ -2,7 +2,8 @@
 
 {% load static %}
 {% load humanize %}
-{% load thumbnail %}
+<!-- {% load thumbnail %} -->
+{% load sorl_thumbnail %}
 
 {% block content %}
 <!-- Page Banner Section Start -->
@@ -221,7 +222,9 @@
                     
                 </div><!-- Shop Product Wrap End -->
                 
-                {% include 'partials/_pagination.html' %}
+                {% if is_paginated %}
+                    {% include 'partials/_pagination.html' %}
+                {% endif%}
                 
             </div>
             
