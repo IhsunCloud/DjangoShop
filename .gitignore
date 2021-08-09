@@ -183,4 +183,8 @@ etc/migrations
 payment/migrations
 shop/migrations
 
+# Uploads
+media/collectstatic/
+media/uploads/
+
 # End of https://www.toptal.com/developers/gitignore/api/django,macos
