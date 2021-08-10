@@ -33,7 +33,7 @@ AUTH_USER_MODEL = "accounts.User"
 ALLOW_UNICODE_SLUGS = True
 
 
-# CKEDITOR Configs -->
+# CKEDITOR Configs
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
@@ -43,3 +43,6 @@ from easy_thumbnails.conf import Settings as thumbnail_settings
 THUMBNAIL_PROCESSORS = (
     'image_cropping.thumbnail_processors.crop_corners',
 ) + thumbnail_settings.THUMBNAIL_PROCESSORS
+
+# Grappelli Configs
+GRAPPELLI_ADMIN_TITLE = 'Aigin Shop'

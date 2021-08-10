@@ -12,6 +12,7 @@ urlpatterns = [
     path('cart', include('cart.urls')),
     path('checkout/', include('payment.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('registration/', include('accounts.urls')), 
     path('shop/', include('shop.urls')),
 ]

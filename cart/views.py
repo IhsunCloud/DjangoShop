@@ -4,15 +4,13 @@ from django.shortcuts import render
 
 from django.views import generic
 
-from django_ajax.mixin import AJAXMixin
-
 from .cart import Cart
 from .forms import CartAddProductForm
 
 from shop.models import Product
 
 
-class CartAddView(AJAXMixin, generic.View):
+class CartAddView(generic.View):
 
     def post(self, request, pk, *args, **kwargs):
         cart = Cart(request)
@@ -26,7 +24,7 @@ class CartAddView(AJAXMixin, generic.View):
         return redirect('cart:cart_detail')
 
 
-class CartRemoveView(AJAXMixin, generic.View):
+class CartRemoveView(generic.View):
 
     def post(self, request, product_id, *args, **kwargs):
         cart = Cart(request)
@@ -36,7 +34,7 @@ class CartRemoveView(AJAXMixin, generic.View):
         return redirect('cart:cart_detail')
 
 
-class CartDetailView(AJAXMixin, generic.View):
+class CartDetailView(generic.View):
     template_name = 'pages/shop/cart.html'
 
     def get(self, request, *args, **kwargs):
