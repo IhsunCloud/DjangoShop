@@ -1,32 +1,42 @@
 {% extends 'shared/_base.html' %}
+
 {% load static %}
+{% load include_by_ajax_tags %}
 
 {% block title %}
-خرید، مقایسه، بررسی و قیمت گوشی موبایل، تبلت، ساعت هوشمند
+    خرید، مقایسه، بررسی و قیمت گوشی موبایل، تبلت، ساعت هوشمند
 {% endblock title %}
 
 {% block content %}
 
-{% include "partials/index/_slider.html" %}
-{% include "partials/index/_top_banner.html" %}
-{% include "partials/index/_new_arrival.html" %}
+    {% include_by_ajax "partials/index/_slider.html" placeholder_template_name="partials/index/_slider.html" %}
+    {% include_by_ajax "partials/index/_top_banner.html" placeholder_template_name="partials/index/_top_banner.html" %}
+    {% include_by_ajax "partials/index/_new_arrival.html" placeholder_template_name="partials/index/_new_arrival.html" %}
 
-<!-- Banner Section Start -->
-<div class="banner-section section mb-90">
-    <div class="container">
-        <div class="row">
-            
-            <!-- Banner -->
-            <div class="col-12">
-                <div class="banner"><a href="#"><img src="{% static 'assets/images/banner/banner-3.jpg' %}" alt="Banner"></a></div>
+    <!-- Banner Section Start -->
+    <div class="banner-section section mb-90">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Banner -->
+                <div class="col-12">
+                    <div class="banner"><a href="#"><img src="{% static 'assets/images/banner/banner-3.jpg' %}" alt="Banner"></a></div>
+                </div>
+                
             </div>
-            
         </div>
-    </div>
-</div><!-- Banner Section End -->
+    </div><!-- Banner Section End -->
 
-{% include "partials/index/_featured_items.html" %}
-{% include "partials/index/_feature-shipping.html" %}
-{% include "partials/index/_popup.html" %}
+    {% include_by_ajax "partials/index/_featured_items.html" placeholder_template_name="partials/index/_featured_items.html" %}
+    {% include_by_ajax "partials/index/_feature-shipping.html" placeholder_template_name="partials/index/_feature-shipping.html" %}
+    {% include_by_ajax "partials/index/_popup.html" placeholder_template_name="partials/index/_popup.html" %}
+
+    {% block js %}
+        <script>
+            $(document).on('include_by_ajax_all_loaded', function() {
+                console.log('Now all placeholders are loaded and replaced with content');
+            })
+        </script>
+    {% endblock js %} 
 
 {% endblock content %}
