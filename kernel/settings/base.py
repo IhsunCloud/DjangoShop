@@ -4,8 +4,8 @@ BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 
 INSTALLED_APPS = [
     # auto complete package
-    'dal',
-    'dal_select2',
+    # 'dal',
+    # 'dal_select2',
     'grappelli',
     # auto complete package
     'django.contrib.admin',
