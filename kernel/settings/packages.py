@@ -1,9 +1,10 @@
+from re import I
 from .base import INSTALLED_APPS
 from .base import BASE_DIR
 import os
 
 
-# Third-Party Apps -->
+# Third-Party Apps
 INSTALLED_APPS.append('ajax_datatable'),
 INSTALLED_APPS.append('ckeditor'),
 INSTALLED_APPS.append('colorfield'),
@@ -17,7 +18,12 @@ INSTALLED_APPS.append('taggit'),
 INSTALLED_APPS.append('easy_thumbnails'),
 INSTALLED_APPS.append('image_cropping'),
 
-# My Apps -->
+# API Application
+INSTALLED_APPS.append('rest_framework'),
+INSTALLED_APPS.append('rest_framework_simplejwt'),
+INSTALLED_APPS.append('rest_framework_swagger'),
+
+# Custom Project
 INSTALLED_APPS.append('accounts.apps.AccountsConfig'),
 INSTALLED_APPS.append('blog.apps.BlogConfig'),
 INSTALLED_APPS.append('cart.apps.CartConfig'),

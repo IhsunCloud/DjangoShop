@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('', include('etc.urls')),
+    path('api/v1/', include('api.v1.urls')),
     path('blog/', include('blog.urls')),
     path('cart', include('cart.urls')),
     path('checkout/', include('payment.urls')),
