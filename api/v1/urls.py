@@ -6,11 +6,12 @@ from rest_framework_simplejwt.views import (
 )
 from rest_framework.routers import DefaultRouter
 
-from .views import Post
+from .views import Post, Product
 
 
 router = DefaultRouter()
 router.register(r'blog', Post)
+router.register(r'shop', Product)
 
 
 urlpatterns = [

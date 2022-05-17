@@ -13,6 +13,8 @@ from mptt.models import TreeForeignKey
 from shop.managers import ProductManager
 from taggit.managers import TaggableManager
 
+from accounts.models import User
+
 
 class Product(models.Model):
 	""" Model definition for Products. """
@@ -56,6 +58,8 @@ class Product(models.Model):
 		related_name='products', on_delete=models.CASCADE, null=True, blank=True)
 
 	tags = TaggableManager()
+
+	author = models.ForeignKey(User, related_name='posts', null=True, on_delete=models.CASCADE)
 
 	created_at = models.DateTimeField(_('Product Created At'), auto_now_add=True)
 	modified_at = models.DateTimeField(_("Product Modified At"), auto_now=True)
