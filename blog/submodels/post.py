@@ -28,7 +28,7 @@ class Post(models.Model):
 	slug = models.SlugField(_('Slug'), max_length=100, allow_unicode=True, unique=True)
 	description = RichTextUploadingField(_('Description'))
 	
-	author = models.ForeignKey(User, related_name='posts', null=True, on_delete=models.CASCADE)
+	author = models.ForeignKey(User, related_name='author_posts', null=True, on_delete=models.CASCADE)
 	category = TreeForeignKey(Category, related_name='posts', on_delete=models.CASCADE, null=True)
 	status = models.CharField(_('Status'), max_length=1, choices=STATUS_CHOICES)
 	
