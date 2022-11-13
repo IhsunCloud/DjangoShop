@@ -8,7 +8,7 @@ from shop.managers import CategoryManager
 class Category(MPTTModel):
 	""" Model definition for Categories. """
 
-	name = models.CharField(max_length=50, unique=True)
+	name = models.CharField(_('Name'), max_length=50, unique=True)
 	slug = models.SlugField(_('Slug'), null=True, allow_unicode=True)
 	parent = TreeForeignKey('self', on_delete=models.CASCADE, 
 		null=True, blank=True, related_name='children')
@@ -18,6 +18,7 @@ class Category(MPTTModel):
 		order_insertion_by = ['name']
 	
 	class Meta:
+		""" Meta definition of Categories. """
 		unique_together = (('parent', 'slug',))
 		verbose_name = _('Category')
 		verbose_name_plural = _('Categories')
