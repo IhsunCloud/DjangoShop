@@ -57,13 +57,12 @@ class Product(models.Model):
 	comment = models.ForeignKey(Comment, verbose_name=_('Comment'),
 		related_name='products', on_delete=models.CASCADE, null=True, blank=True)
 
-	tags = TaggableManager()
-
 	author = models.ForeignKey(User, related_name='posts', null=True, on_delete=models.CASCADE)
 
 	created_at = models.DateTimeField(_('Product Created At'), auto_now_add=True)
 	modified_at = models.DateTimeField(_("Product Modified At"), auto_now=True)
 
+	tags = TaggableManager()
 	class Meta:
 		""" Meta definition for Products. """
 		verbose_name = _('Products')
@@ -77,7 +76,7 @@ class Product(models.Model):
 
 	def get_final_price(self):
 		""" Calculate the final price of the discounted product. """
-		return self.price - (self.price * discount / 100)
+		return self.price - (self.price * self.discount / 100)
 
 	def has_discount(self):
 		if self.discount:
