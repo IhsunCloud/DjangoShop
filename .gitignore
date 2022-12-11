@@ -188,3 +188,5 @@ media/collectstatic/
 media/uploads/
 
 # End of https://www.toptal.com/developers/gitignore/api/django,macos
+
+settings.ini
