@@ -186,7 +186,9 @@ shop/migrations
 # Uploads
 media/collectstatic/
 media/uploads/
+*/migrations/
 
 # End of https://www.toptal.com/developers/gitignore/api/django,macos
 
 settings.ini
+.vscode/
