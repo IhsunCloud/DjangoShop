@@ -15,7 +15,6 @@ INSTALLED_APPS.append('search'),
 INSTALLED_APPS.append('sorl.thumbnail'),
 INSTALLED_APPS.append('taggit'),
 
-INSTALLED_APPS.append('easy_thumbnails'),
 INSTALLED_APPS.append('image_cropping'),
 
 # API Application

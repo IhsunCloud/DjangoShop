@@ -3,7 +3,7 @@ from decouple import config
 import os
 
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 
 # DATABASE Config -->
