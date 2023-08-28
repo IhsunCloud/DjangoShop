@@ -5,7 +5,6 @@ import os
 
 
 # Third-Party Apps
-INSTALLED_APPS.append('ajax_datatable'),
 INSTALLED_APPS.append('ckeditor'),
 INSTALLED_APPS.append('colorfield'),
 INSTALLED_APPS.append('django_ajax'),
@@ -48,10 +47,6 @@ from easy_thumbnails.conf import Settings as thumbnail_settings
 THUMBNAIL_PROCESSORS = (
     'image_cropping.thumbnail_processors.crop_corners',
 ) + thumbnail_settings.THUMBNAIL_PROCESSORS
-
-
-# Grappelli Configs
-GRAPPELLI_ADMIN_TITLE = 'Aigin Shop'
 
 
 # Rest Framework
